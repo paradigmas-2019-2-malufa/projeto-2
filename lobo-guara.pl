@@ -3,7 +3,7 @@ lobo :-
     write("                        |\\---/|"), nl,
     write("                       /  , ,  |" ), nl,
     write("                  __.-'|  / \\ /)"), nl,
-    write("         __ ___.-´        ._O/ "), nl,
+    write("         __ ___.-´        ._./ "), nl,
     write("      .-'  '        :      _/ "), nl,
     write("     / ,    .        .     |" ), nl,
     write("    :  ;    :        :   _/" ), nl,
