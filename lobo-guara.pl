@@ -7,7 +7,7 @@ lobo :-
     write("      .-'  '        :      _/ "), nl,
     write("     / ,    .        .     |" ), nl,
     write("    :  ;    :        :   _/" ), nl,
-    write("    |  |   .'     __:   /' "), nl,
+    write("    |  |   .'     __:   / "), nl,
     write("    |  :   /'----'| \\  |" ), nl,
     write("    \\  |\\  |      | /| |" ), nl,
     write("     '.'| /       || \\ |" ), nl,

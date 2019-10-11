@@ -1,7 +1,7 @@
 tamandua :-
     write("                  _________ ______" ), nl,
-    write("              ___/         V      '\\'" ), nl,
-    write("            / v           |\\       \\'" ), nl,
+    write("              ___/         V      '\\" ), nl,
+    write("            / v           |\\       \\" ), nl,
     write("           /_@/-\\  /  \\   | ~~~~\\  |" ), nl,
     write("  ,,      //     \\ |---\\_ |      ~~" ), nl,
     write("  Oo=    |/       \\|     \\| " ), nl,

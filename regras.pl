@@ -1,5 +1,6 @@
 :- consult('animais').
 :- ['caracteristicas'].
+:-['sobre-animal'].
 especie(ID, Especie) :- animal(ID, Especie).
 adicionarAnimal(I,E):-assertz(animal(I,E)).
 pegarEspecie(A) :- especie(A,E), write(E),nl.
@@ -18,6 +19,7 @@ acao(2, A):- levarParaPassear(A).
 acao(3, A):- darAlimento(A).
 acao(4, A):- atoDeIgnorar(A).
 acao(5, A):- darBronca(A).
+acao(0,A) :-  nl,write('Tamagotchi se foi...'), nl, nl,halt.
 
 interagir(X, Y) :- 
     write('Seu pet se chama '), 
@@ -26,7 +28,7 @@ interagir(X, Y) :-
     read(I), acao(I,A),
     V=X, resposta(Y, V).
     
-resposta(Y, V) :-  read(I), shell(clear), write('Seu pet é um '), exibir(Y), nl, sobre(Y), nl,write('---'),nl,write('---'),nl,nl, write('Seu pet se chama '), write(V), write('. Interaja com ele...'), nl, menuInteracao, sentimento(I,A), resposta(Y, V).
+resposta(Y, V) :-  read(I), shell(clear), write('Seu pet é um '),nl, exibir(Y), nl, sobre(Y), nl,write('---'),nl,write('---'),nl,nl, write('Seu pet se chama '), write(V), write('. Interaja com ele...'), nl, menuInteracao, acao(I,A), resposta(Y, V).
 
 menuInteracao :-  nl, write(' 1 - Carinhar'), nl,
  		      write(' 2 - Passear'), nl,
