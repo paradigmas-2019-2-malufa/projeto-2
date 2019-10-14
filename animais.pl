@@ -11,22 +11,8 @@ animal(5, 'anta').
 animal(6, 'tatu-canastra').
 animal(7, 'papagaio').
 
-:-dynamic animal/2.
-
-% animal(ID, Especie, ...)
-animal(1, 'tamanduá').
-animal(2, 'tucano').
-animal(3, 'lobo-guara').
-animal(4, 'jaguatirica').
-animal(5, 'anta').
-animal(6, 'tatu-canastra').
-animal(7, 'papagaio').
-
 :-dynamic meuPet/3.
 % meuPet(especie, nome, vida).
-meuPet(-1, 'none', 5).
-meuPet(1, 'melinha', 5).
-meuPet(2, 'juju', 5).
 
 addPet(ID, Nome, Vida) :- assert(meuPet(ID, Nome, Vida)).
 
@@ -41,10 +27,10 @@ mostraPets.
 
 add(X,Y,Sum):- (nonvar(X)-> Sum is X+Y;Sum is Y).
 
-somarVida(ID, Soma, Sucesso) :- 
-    meuPet(ID, Nome, Vida), 
-    mostraUm(ID, Nome, Vida),
+somarVida(ID, Soma) :- 
+    meuPet(ID, Nome, Vida),
     add(Vida,Soma,NovaVida),
     NovaVida > 0 ->
-        removePet(ID), addPet(ID, Nome, NovaVida), Sucesso = true 
-    ; meuPet(ID, Nome, Vida), write(Nome), write(' morreu :('),nl, Sucesso = false, removePet(ID).
+        NovaVida > 15 -> write('seu bichinho passou mal de tanto comer, ele voltou para 10 de vida'), nl, removePet(ID), addPet(ID, Nome, 10);
+        removePet(ID), addPet(ID, Nome, NovaVida)
+    ; meuPet(ID, Nome, Vida), write(Nome), write(' morreu :('),nl, removePet(ID), halt.

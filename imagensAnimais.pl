@@ -96,5 +96,3 @@ exibir(7) :-
     write("                  \\   '."), nl,
     write("                   \\ \\ '.)" ), nl,
     write("                    '-'-" ), nl.
-
-exibir(_) :- write('Id de animal invalido!'), nl.

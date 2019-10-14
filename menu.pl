@@ -1,9 +1,10 @@
 :- ['regras'].
+:- ['animais'].
 
 opt(1) :- nl, write('Tamagotchi tá nascendoo...'), nl, nl, sleep(1), X is random(4) + 1 ,  shell(clear),
 write('Seu pet é um '),nl,nl
 , exibir(X), nl, nl,write('Dê um nome ao seu pet... ')
-,nl,read(N), nl, interagir(N, X),nl.
+,nl,read(N), nl, addPet(X, N, 10), interagir(N, X),nl.
 
 opt(0) :- nl, write('Tamagotchi se foi...'), nl, nl,halt.
 
