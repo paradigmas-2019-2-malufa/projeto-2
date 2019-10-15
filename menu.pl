@@ -2,8 +2,8 @@
 :- ['animais'].
 
 opt(1) :- nl, write('Tamagotchi tá nascendoo...'), nl, nl, sleep(1), X is random(4) + 1 ,  shell(clear),
-write('Seu pet é um '),nl,nl
-, exibir(X), nl, nl,write('Dê um nome ao seu pet... ')
+write('Seu pet é um/a '),animal(X, Especie),write(Especie),nl,nl
+, exibir(X), nl, nl,write('Dê um nome ao seu pet (letras minusculas, sem acentos e espaços)... ')
 ,nl,read(N), nl, addPet(X, N, 10), interagir(N, X),nl.
 
 opt(0) :- nl, write('Tamagotchi se foi...'), nl, nl,halt.
@@ -22,9 +22,10 @@ menu :-
     write('|  _ \\| \'__/ _` |_  / | | |/ __/ _` |'), nl,
     write('| |_) | | | (_| |/ /| |_| | (_| (_| |'), nl,
     write('|____/|_|  \\__,_/___|\\__,_|\\___\\__,_|'), nl, nl,
-    write('1 - Começar'), nl,
+    write('Obs: para tudo que escrever, coloque ponto (.) no final, e aperte enter'),
+    nl, nl, write('1 - Começar'), nl,
     write('0 -  Sair'), nl, nl, read(Op),nl,nl,write('você escolheu :' ),write(Op),nl,
-    opt(Op),nl,sleep(3).
+    opt(Op),nl.
 
 :- initialization main, halt.
 
