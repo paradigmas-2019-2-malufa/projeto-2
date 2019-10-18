@@ -1,7 +1,7 @@
 :- ['regras'].
 :- ['animais'].
 
-opt(1) :- nl, write('Tamagotchi tá nascendoo...'), nl, nl, sleep(1), X is random(4) + 1 ,  shell(clear),
+opt(1) :- nl, write('Tamagotchi tá nascendoo...'), nl, nl, sleep(1), X is random(7) + 1 ,  shell(clear),
 write('Seu pet é um/a '),animal(X, Especie),write(Especie),nl,nl
 , exibir(X), nl, nl,write('Dê um nome ao seu pet (letras minusculas, sem acentos e espaços)... ')
 ,nl,read(N), nl, addPet(X, N, 10), interagir(N, X),nl.
